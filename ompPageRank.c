@@ -118,7 +118,7 @@ void pageRankGaussSeidel(int N,int **Graph,int *outBoundLinks,int *inBoundLinks,
         p++;
         
         //compute error
-        //e = errorComputation(pageRankVector, previous, N,NumberOfThreads);
+        e = errorComputation(pageRankVector, previous, N,NumberOfThreads);
     }
     printf("iterations: %d \n",p);
     
