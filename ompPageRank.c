@@ -137,7 +137,7 @@ void test(int N,int *pageRankVector,char *filename)
     
     for (i=0;i<N;i++)
     {
-        n = fscanf(file,"%d",&test[i]);
+        n = fscanf(file,"%lf",&test[i]);
     }
     
     for (i=0;i<N;i++)
