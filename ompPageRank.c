@@ -131,9 +131,9 @@ void test(int N,int *pageRankVector,char *filename)
     int i,n,counter=0;
     FILE *file = fopen(filename, "r");
     
-    int *test;
+    double *test;
     
-    test = malloc(sizeof(int*)*N);
+    test = malloc(sizeof(double)*N);
     
     for (i=0;i<N;i++)
     {
