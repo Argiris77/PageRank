@@ -360,12 +360,12 @@ int main(int argc , char **argv)
     time = (double)((endwtime.tv_usec - startwtime.tv_usec)/1.0e6
 		      + endwtime.tv_sec - startwtime.tv_sec);
 
-    
+    /*
     for (i=0;i<30;i++)
     {
         printf("%.20f \n",pageRankVector[i]);
     }
-    
+    */
     printf("Serial PageRank time: %f \n", time);
     
     printf("Number of iterations: %d \n",iter);
