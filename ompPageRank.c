@@ -124,6 +124,38 @@ void pageRankGaussSeidel(int N,int **Graph,int *outBoundLinks,int *inBoundLinks,
     
 }
 
+//test the results
+void test(int N,int *pageRankVector,char *filename)
+{
+    
+    int i,n,counter=0;
+    FILE *file = fopen(filename, "r");
+    
+    int *test;
+    
+    test = malloc(sizeof(int*)*N);
+    
+    for (i=0;i<N;i++)
+    {
+        n = fscanf(file,"%d",&test[i]);
+    }
+    
+    for (i=0;i<N;i++)
+    {
+        if (fabs(pageRankVector[i]-(double)test[i])/fabs((double)test[i]) > 0.1)
+        {
+            counter++;
+        }
+    }
+    
+    if((double)(N-counter) / N * 100 < 95.0)
+		printf("Test Failed!\n");
+	else
+		printf("Test Passed!\n");
+        
+}
+
+
 
 
 int main(int argc , char **argv)
@@ -394,7 +426,9 @@ int main(int argc , char **argv)
     
     printf("Parallel PageRank time: %f \n", time);
 
-    
+    //test the results
+    //test(N,pageRankVector,testFile);
+		
     // deallocate memory
     free(inBoundLinks);
     free(outBoundLinks);
