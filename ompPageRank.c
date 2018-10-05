@@ -384,12 +384,13 @@ int main(int argc , char **argv)
     time = (double)((endwtime.tv_usec - startwtime.tv_usec)/1.0e6
 		      + endwtime.tv_sec - startwtime.tv_sec);
 
-    
+    /*
     for (i=0;i<10;i++)
     {
         
         printf("%.20f \n",pageRankVector[i]);
     }
+    */
     
     printf("Parallel PageRank time: %f \n", time);
 
